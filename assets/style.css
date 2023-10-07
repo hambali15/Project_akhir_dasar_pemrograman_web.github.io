@@ -1,0 +1,343 @@
+:root {
+    --primary: #191717;
+    --bg: #d9d9dd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    background-color: var(--bg);
+}
+
+/* header */
+header .navbar {
+    background-color: rgba(217, 217, 221, 0.6);
+    border-bottom: 0.8px solid #99999b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 8vh;
+    position: fixed;
+    inset-inline: 0;
+    z-index: 999;
+}
+header .navbar .logo {
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+header .navbar .logo img {
+    width: 12vw;
+    min-width: 150px;
+}
+header .navbar .hamburger-menu img {
+    width: 1.7rem;
+    margin-top: 5px;
+    margin-right: 3rem;
+    display: none;
+}
+header .navbar .hamburger-menu img:hover {
+    width: 2rem;
+}
+@keyframes fadeIn-right {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+header .navbar-nav ul {
+    display: flex;
+    justify-content: center;
+    padding-inline: 8rem;
+    gap: 4rem;
+}
+header .navbar-nav ul li {
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+header .navbar-nav ul li a {
+    text-decoration: none;
+    color: var(--primary);
+}
+header .navbar-nav ul li a:hover {
+    text-shadow: 0 2px 2px #535353;
+}
+
+/* Homepage */
+main .home-page {
+    background-image: url(hero.jpg);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+main .home-page .web-judul {
+    position: absolute;
+    inset-block-start: 20%;
+    inset-inline-start: 5%;
+    color: var(--primary);
+}
+main .home-page .web-judul p {
+    width: 50%;
+}
+main .home-page .layer-bottom svg {
+    position: absolute;
+    min-height: 50vh;
+    border: none;
+}
+main .home-page .layer-bottom svg:nth-child(1) {
+    inset-block-end: -18%;
+}
+main .home-page .layer-bottom svg:nth-child(2) {
+    inset-block-end: -8%;
+}
+
+/* Picture Page */
+main .picture-page {
+    padding: 50px 0 0 30px;
+}
+main .picture-page h1,
+main .history-page h1 {
+    color: var(--primary);
+}
+main .picture-page ul,
+main .history-page ul {
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: space-around;
+}
+main .picture-page ul li,
+main .history-page ul li {
+    list-style-type: none;
+    text-align: center;
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+main .picture-page ul li:hover {
+    font-weight: bolder;
+}
+
+main .picture-page ul li img,
+main .history-page ul li img {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+main .picture-page .photo-card {
+    margin: 1rem auto;
+    text-align: center;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+@keyframes scale {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+main .picture-page .photo-card .Gn-Ciremai,
+.photo-card .Gn-Arjuno,
+.photo-card .Gn-Prau,
+.photo-card .Gn-Slamet {
+    display: none;
+    animation: scale 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+main .picture-page .photo-card .Gn-Ciremai .foto,
+.photo-card .Gn-Arjuno .foto,
+.photo-card .Gn-Slamet .foto,
+.photo-card .Gn-Prau .foto {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    gap: 1rem;
+    padding: 0.3rem 3rem 3rem;
+}
+main .picture-page .photo-card .Gn-Ciremai .foto img,
+.Gn-Arjuno .foto img,
+.Gn-Slamet .foto img,
+.Gn-Prau .foto img {
+    width: 40%;
+    transition: all 0.2s ease-in;
+    border: 4px solid #fff;
+}
+main .picture-page .photo-card .Gn-Ciremai .foto img:hover,
+.Gn-Arjuno .foto img:hover,
+.Gn-Slamet .foto img:hover,
+.Gn-Prau .foto img:hover {
+    box-shadow: 5px 5px 10px 2px var(--primary);
+}
+
+/* History Page */
+main .history-page {
+    padding: 3rem 1rem 2rem;
+    background-image: url(bg-history.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s;
+}
+
+main .history-page ul li:hover {
+    box-shadow: 5px 5px 2px var(--primary);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+main .history-page .history-card {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: rgba(217, 217, 221, 0.8);
+}
+main .history-page .history-card p {
+    text-align: justify;
+    text-indent: 2em;
+    font-size: 1.2em;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+main .history-page .history-card .Gn-Ciremai,
+.history-card .Gn-Arjuno,
+.history-card .Gn-Slamet,
+.history-card .Gn-Prau {
+    display: none;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+/* Biodata */
+main aside .my-profile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    width: max-content;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+main aside .my-profile .header img {
+    width: 10rem;
+    border: 3px double white;
+}
+main aside .my-profile .content table {
+    padding: 1.2rem;
+}
+main aside .my-profile .content table tr {
+    text-align: left;
+}
+main aside .my-profile .content table tr td {
+    padding-left: 2rem;
+}
+
+/* footer */
+footer {
+    border-top: 2px solid var(--primary);
+    padding-block: 0.5rem;
+}
+footer p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    header .navbar .hamburger-menu img {
+        display: inline-block;
+    }
+    header .navbar .navbar-nav {
+        position: absolute;
+        height: 100vh;
+        inset-block-start: 100%;
+        right: -100%;
+        border-left: 0.5px solid #99999b;
+        background-color: rgba(217, 217, 221, 0.8);
+    }
+    header .navbar .active {
+        right: 0;
+        animation: fadeIn-right 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+    header .navbar-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.3rem;
+    }
+
+    main .home-page .web-judul {
+        inset-block-start: 10%;
+    }
+    main .home-page .web-judul p {
+        width: 75%;
+        text-align: justify;
+    }
+
+    main .picture-page {
+        padding-top: 4rem;
+    }
+    main .picture-page ul {
+        justify-content: center;
+        margin-right: 1rem;
+    }
+    main .picture-page .photo-card {
+        margin-right: 1rem;
+    }
+    main .picture-page .photo-card .Gn-Ciremai .foto,
+    .photo-card .Gn-Arjuno .foto,
+    .photo-card .Gn-Slamet .foto,
+    .photo-card .Gn-Prau .foto {
+        flex-direction: column;
+    }
+    main .picture-page .photo-card .Gn-Ciremai .foto img,
+    .Gn-Arjuno .foto img,
+    .Gn-Slamet .foto img,
+    .Gn-Prau .foto img {
+        width: 100%;
+    }
+
+    main .history-page {
+        padding-top: 4rem;
+    }
+    main .history-page .history-card p {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    main .history-page .history-card p {
+        font-size: 0.7rem;
+    }
+}
